@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block title %}
+<title>Show Details</title>
+{% endblock %} {% block content %}
+<h1><center>All Details</center></h1>
+<div class="container-fluid">
+<table class="table table-bordered table-condensed col-md-12">
+  <thead>
+    <tr class="bg-warning">
+      <th>Emp_id</th>
+      <th>Emp_name</th>
+      <th>Emp_dept</th>
+      <th>Emp_salary</th>
+      <th>Emp_tasks</th>
+      <th>Emp_manager</th>
+      <th>Pan card</th>
+      <th class="pl-5">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+    <td class="table-primary">{{i.emp_id}}</td>
+    <td class="table-secondary">{{i.emp_name}}</td>
+    <td  class="table-success">{{i.emp_department}}</td>
+    <td class="table-danger">{{i.emp_salary}}</td>
+    <td class="table-warning">{{i.emp_tasks}}</td>
+    <td  class="table-info">{{i.emp_manager}}</td>
+    <td class="table-dark">{{i.pan}}</td>
+    <td>
+        <a href="{% url 'update_url' i.id %}"><button class="btn btn-outline-warning mr-3">UPDATE</button></a>
+        <a href="{% url 'delete_url' i.id %}"><button class="btn btn-outline-danger">DELETE</button></a>
+    </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
