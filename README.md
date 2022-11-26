@@ -1,4 +1,12 @@
 # MaazeIT
+
+steps to run:
+1. virtualenv venv
+2. venv/scripts/activate
+3. cd project1
+4. py manage.py runserver
+
+
 1.	I performed Crud operation for Employee management system.
 2.	Steps That I did with proper documentations
 3.	I have created 2 apps in Django
